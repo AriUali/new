@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Products</title>
+    </head>
+   
+
+    <body>
+        
+        <h2>Список товаров</h2>
+        <p><a style="text-decoration: none;" href="/register">Create new account</a></p>
+        <p><a style="text-decoration: none;" href="/login">Login</a></p>
+        <p><a style="text-decoration: none;" href="/create">Add new product</a></p>
+        <p><a style="text-decoration: none;" href="/searching">Search by product model</a></p>
+
+        <table>
+            <thead><th>Id</th><th>Model</th><th>Company</th><th>Price</th><th></th></thead>
+            {{range . }}
+            <tr style="  " >
+                <td>{{.Id}}</td>
+                <td>{{.Model}}</td>
+                <td>{{.Company}}</td>
+                <td>{{.Price}}</td>
+                <td><a style="text-decoration: none;" href="/edit/{{.Id}}">Edit product</a> |
+                    <a style="text-decoration: none;" href="/delete/{{.Id}}">Delete product</a>
+                </td>
+            </tr>
+            {{end}}
+        </table>
+
+        <br><br>
+
+    </body>
+</html>
